@@ -1,0 +1,109 @@
+@mixin h1 {
+  font-family: "Raleway";
+  font-weight: 900;
+  color: $_white;
+  font-size: $_h1;
+  line-height: $_h1_lh;
+}
+
+@mixin h1_tablet {
+  font-family: "Raleway";
+  font-weight: 900;
+  color: $_white;
+  font-size: $_h1_tablet;
+  line-height: $_h1_lh_tablet;
+}
+
+@mixin h1_mobile {
+  font-family: "Raleway";
+  font-weight: 900;
+  color: $_white;
+  font-size: $_h2;
+  line-height: $_h2_lh;
+}
+
+@mixin h2 {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: $_h2;
+  line-height: $_h2_lh;
+}
+
+@mixin h3 {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: $_h3;
+  line-height: $_h3_lh;
+}
+
+@mixin h4 {
+  font-family: "Raleway";
+  font-weight: 900;
+  font-size: $_h4;
+  line-height: $_h4_lh;
+}
+
+@mixin h5 {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: $_h5;
+  line-height: $_h5_lh;
+}
+
+@mixin h6 {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: $_h6;
+  line-height: $_h6_lh;
+}
+
+@mixin h6_mobile {
+  font-family: "Raleway";
+  font-size: $_h6_mobile;
+  line-height: $_h6_lh_mobile;
+}
+
+@mixin nav_text($color) {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: $_h6;
+  line-height: $_h6_lh;
+  color: $color;
+}
+
+@mixin button_text {
+  font-family: "Raleway";
+  font-weight: 900;
+  font-size: $_h4;
+  line-height: $_h4_lh;
+  color: $_white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin card {
+    width: 380px;
+    border: $_border;
+    border-radius: 20px;
+    box-shadow: 0 0 15px $_yellow;
+    padding: 20px;
+  }
+  
+  @mixin text_1($fz, $color) {
+    padding: 20px;
+    line-height: 50px;
+    font-size: $fz;
+    color: $color;
+  }

@@ -1,0 +1,90 @@
+.work {
+    padding: 20px 0;
+
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.work-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.work-card {
+    // width: 375px;
+    // height: 340px;
+    //разобраться с шириной контайнера!
+    width: 285px;
+    height: 285px;
+    @media (max-width: 1024px) {
+        width: 256px;
+        height: 230px;
+    }
+    @media (max-width: 320px) {
+        width: 150px;
+        height: 144px;
+    }
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    & .work-info {
+        display: none;
+    }
+
+    &:hover .work-info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba($_red_active, .8);
+        color: $_white;
+
+        .work-info__container {
+            display: block;
+
+            .work-info__title {
+                text-align: center;
+                @include h4;
+                @media (max-width: 1024px) {
+                    @include h5;
+                    font-weight: 900;
+                }
+                @media (max-width: 320px) {
+                    @include h5;
+                    font-weight: 900;
+                }
+                margin-bottom: 20px;
+            }
+
+            .work-info__desc p {
+                text-align: center;
+                @include h5;
+                @media (max-width: 1024px) {
+                    @include h6_mobile;
+                }
+                @media (max-width: 320px) {
+                    @include h6_mobile;
+                }
+            }
+        }
+    }
+
+    &:active .work-info {
+        background-color: rgba($_red_active_work, .8);
+    }
+}
