@@ -1,0 +1,80 @@
+.testimonials {
+    background-color: $_white;
+    padding: 20px 0;
+}
+
+.testimonials-wrap {
+    display: flex;
+
+    @media (max-width: 320px) {
+        display: block;
+    }
+}
+
+.testimonials__img {
+    flex-basis: 50%;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.testimonials__text {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $_bg_testimonials;
+}
+
+.testimonials__text-container {
+   width: 471px;
+   padding: 23px;
+
+   @media (max-width: 1024px) {
+    width: 330px;
+    }
+
+    @media (max-width: 320px) {
+        width: 275px;
+        margin-bottom: 95px;
+    }
+}
+
+.testimonials__text-title {
+    margin-bottom: 17px;
+    color: $_white;
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: $_h2;
+    font-family: "Cardo";
+    @media (max-width: 1024px) {
+        font-size: $_h4;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_h4;
+        text-align: center;
+    }
+}
+
+.testimonials__text-sign {
+    color: $_white;
+    text-transform: uppercase;
+    font-size: $_h6;
+    font-weight: 700;
+
+    @media (max-width: 1024px) {
+        font-size: $_h4;
+    }
+
+    @media (max-width: 320px) {
+        font-size: $_sign_mobile;
+        text-align: center;
+
+    }
+}

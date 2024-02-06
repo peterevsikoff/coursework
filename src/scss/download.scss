@@ -1,0 +1,60 @@
+.download {
+    background-color: $_white;
+    padding: 80px 0;
+}
+
+.download-title {
+    @include h3;
+    text-align: center;
+    margin-bottom: 6px;
+    @media (max-width: 1024px) {
+        @include h4;
+    }
+    @media (max-width: 320px) {
+        @include h5;
+    }
+}
+
+.download-desc {
+    @include h5;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 48px;
+
+    @media (max-width: 1024px) {
+        @include h6_mobile;
+    }
+    @media (max-width: 320px) {
+        @include h6_mobile;
+        margin-bottom: 11px;
+    }
+}
+
+.download-button {
+    padding: 11px;
+    text-align: center;
+    margin: auto;
+    background-color: $_red_normal;
+    cursor: pointer;
+    transition: .2s;
+
+    width: 370px;
+    @media (max-width: 1024px) {
+        width: 314px;
+    }
+    @media (max-width: 320px) {
+        width: 280px;
+    }
+
+    &:hover {
+        background-color: $_red_hover;
+    }
+
+    &:active {
+        background-color: $_red_active;
+    }
+
+    a {
+        @include button_text;
+    }
+}

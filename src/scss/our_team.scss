@@ -12,15 +12,33 @@
 
 .our-team-card {
     width: 270px;
-    //margin: 0 15px;
+    margin: 0 10px;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 1024px) {
+        width: 227px;
+    }
+    @media (max-width: 320px) {
+        width: 280px;
+        margin-bottom: 56px;
+    }
 }
 
 .our-team-card__img {
     width: 270px;
     height: 270px;
     overflow: hidden;
+    margin-bottom: 30px;
+
+    @media (max-width: 1024px) {
+        width: 227px;
+        height: 227px;
+    }
+    @media (max-width: 320px) {
+        width: 280px;
+        height: 227px;
+    }
 
     img {
         object-fit: cover;
@@ -29,22 +47,86 @@
         height: 100%;
     }
 }
+
 .our-team-card__name {
+    @include h4;
+    margin-bottom: 6px;
+
+    @media (max-width: 1024px) {
+        @include h5;
+        font-weight: 700;
+    }
+    @media (max-width: 320px) {
+        @include h5;
+        font-weight: 700;
+    }
 }
+
 .our-team-card__position {
+    @include h5;
+    color: $_red_normal;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+
+    @media (max-width: 1024px) {
+        @include h6_mobile;
+        
+    }
+    @media (max-width: 320px) {
+        @include h6_mobile;
+        
+    }
 }
+
 .our-team-card__desc {
+    margin-bottom: 38px;
+    flex-grow: 1;
+
+    p {
+        @include h5;
+        color: $_feature_desc;
+
+        @media (max-width: 1024px) {
+            @include h6_mobile;
+            
+        }
+        @media (max-width: 320px) {
+            @include h6_mobile;
+            
+        }
+    }
 }
+
 .our-team-card__contacts {
     display: flex;
 }
-.awesome-card__img {
-}
-.fa-brands {
-}
-.fa-facebook-f {
-}
-.fa-twitter {
-}
-.fa-linkedin-in {
+
+.our-team__contacts-img {
+    border: 1px solid $_icon_color;
+    width: 39px;
+    height: 39px;
+    color: $_icon_color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 6px;
+    cursor: pointer;
+
+    @media (max-width: 1024px) {
+        width: 32px;
+        height: 32px;
+    }
+    @media (max-width: 320px) {
+        width: 39px;
+        height: 39px;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        color: $_gray;
+        transform: scale(1.05);
+    }
 }
