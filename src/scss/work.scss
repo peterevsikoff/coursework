@@ -2,31 +2,47 @@
     padding: 20px 0;
 
     .container {
-        width: 100%;
+        //width: 100%;
         padding: 0;
     }
 }
 
+// .work-wrap {
+//     display: flex;
+//     justify-content: space-between;
+//     flex-wrap: wrap;
+// }
+
 .work-wrap {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(285px, auto));
+    grid-template-rows: repeat(auto-fit, minmax(340px, auto));
+    @media (max-width: 1024px) {
+        //height: 230px;
+        grid-template-columns: repeat(auto-fit, minmax(256px, auto));
+        grid-template-rows: repeat(auto-fit, minmax(230px, auto));
+    }
+    @media (max-width: 320px) {
+        //height: 144px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+        grid-template-rows: repeat(auto-fit, minmax(144px, auto));
+    }
 }
 
 .work-card {
     // width: 375px;
     // height: 340px;
     //разобраться с шириной контайнера!
-    width: 285px;
-    height: 285px;
-    @media (max-width: 1024px) {
-        width: 256px;
-        height: 230px;
-    }
-    @media (max-width: 320px) {
-        width: 150px;
-        height: 144px;
-    }
+    // width: 285px;
+    // height: 285px;
+    // @media (max-width: 1024px) {
+    //     width: 256px;
+    //     height: 230px;
+    // }
+    // @media (max-width: 320px) {
+    //     width: 150px;
+    //     height: 144px;
+    // }
     overflow: hidden;
     position: relative;
     cursor: pointer;

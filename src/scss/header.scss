@@ -1,12 +1,38 @@
 .header {
-    padding: 20px 0;
-    //background-color: $_black;
-    // position: sticky;
-    // top: 0;
-    // z-index: 200;
+    //padding: 20px 0;
+    background-image: url(../img/background/background-banner.png);
+    //background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    padding: 0 0 120px;
+    @media (max-width: 1024px) {
+        padding: 0 0 126px;
+    }
+    @media (max-width: 320px) {
+        padding: 0 0 52px;
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $_mask;
+    }
 }
 
-.header-wrap {
+.navigation {
+    margin-bottom: 130px;
+}
+
+.navigation-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,12 +49,12 @@
     }
 }
 
-.header-logo__left-part {
+.navigation-logo__left-part {
     @include h4;
     color: $_gray_logo;
 }
 
-.header-logo__right-part {
+.navigation-logo__right-part {
     @include h4;
     font-weight: 400;
     color: $_white;
@@ -88,5 +114,74 @@
 
     a {
         @include nav_text($_red_active);
+    }
+}
+
+.banner-title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+
+    @include h1;
+    @media (max-width: 1024px) {
+        @include h1_tablet;
+        margin-bottom: 62px;
+
+    }
+    @media (max-width: 320px) {
+        @include h1_mobile;
+        margin-bottom: 32px;
+    }
+}
+
+.banner-desc {
+    margin-bottom: 80px;
+    @media (max-width: 1024px) {
+        margin-bottom: 90px;
+    }
+    @media (max-width: 320px) {
+        margin-bottom: 50px;
+    }
+
+    p {
+        color: $_white;
+        text-align: center;
+        @include h4;
+        @media (max-width: 1024px) {
+            @include h5;
+        }
+        @media (max-width: 320px) {
+            @include h6_mobile;
+        }
+        font-weight: 400;
+    }
+}
+
+.banner-find {
+    padding: 11px;
+    text-align: center;
+    margin: auto;
+    background-color: $_red_normal;
+    cursor: pointer;
+    transition: .2s;
+
+    width: 370px;
+    @media (max-width: 1024px) {
+        width: 314px;
+    }
+    @media (max-width: 320px) {
+        width: 280px;
+    }
+
+    &:hover {
+        background-color: $_red_hover;
+    }
+
+    &:active {
+        background-color: $_red_active;
+    }
+
+    a {
+        @include button_text;
     }
 }
