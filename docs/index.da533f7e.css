@@ -1,17 +1,47 @@
 @import "https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap";
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
 .header {
-  padding: 20px 0;
+  background-image: url("background-banner.1a6da712.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 0 120px;
+  position: relative;
 }
 
-.header-wrap {
+@media (width <= 1024px) {
+  .header {
+    padding: 0 0 126px;
+  }
+}
+
+@media (width <= 320px) {
+  .header {
+    padding: 0 0 52px;
+  }
+}
+
+.header:after {
+  content: "";
+  background-color: #252b49cc;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.navigation {
+  margin-bottom: 130px;
+}
+
+.navigation-wrap {
   justify-content: space-between;
   align-items: center;
   display: flex;
   position: relative;
 }
 
-.header-wrap:after {
+.navigation-wrap:after {
   content: "";
   background-color: #babbc5;
   width: 100%;
@@ -21,7 +51,7 @@
   top: 100%;
 }
 
-.header-logo__left-part {
+.navigation-logo__left-part {
   color: #656980;
   font-family: Raleway;
   font-size: 1.5rem;
@@ -29,7 +59,7 @@
   line-height: 1.76125rem;
 }
 
-.header-logo__right-part {
+.navigation-logo__right-part {
   color: #fff;
   font-family: Raleway;
   font-size: 1.5rem;
@@ -96,36 +126,6 @@
   font-size: .8125rem;
   font-weight: 700;
   line-height: .95375rem;
-}
-
-.banner {
-  background-image: url("background-banner.1a6da712.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 0 0 120px;
-  position: relative;
-}
-
-@media (width <= 1024px) {
-  .banner {
-    padding: 0 0 126px;
-  }
-}
-
-@media (width <= 320px) {
-  .banner {
-    padding: 0 0 52px;
-  }
-}
-
-.banner:after {
-  content: "";
-  background-color: #252b49cc;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
 }
 
 .banner-title {
@@ -354,36 +354,33 @@
 }
 
 .work .container {
-  width: 100%;
   padding: 0;
 }
 
 .work-wrap {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  display: flex;
-}
-
-.work-card {
-  cursor: pointer;
-  width: 285px;
-  height: 285px;
-  position: relative;
-  overflow: hidden;
+  grid-template-rows: repeat(auto-fit, minmax(340px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(285px, auto));
+  display: grid;
 }
 
 @media (width <= 1024px) {
-  .work-card {
-    width: 256px;
-    height: 230px;
+  .work-wrap {
+    grid-template-rows: repeat(auto-fit, minmax(230px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(256px, auto));
   }
 }
 
 @media (width <= 320px) {
-  .work-card {
-    width: 150px;
-    height: 144px;
+  .work-wrap {
+    grid-template-rows: repeat(auto-fit, minmax(144px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
   }
+}
+
+.work-card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .work-card img {
