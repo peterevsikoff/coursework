@@ -37,6 +37,13 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+   
+    @media (max-width: 320px) {
+        padding: 10px 0;
+        //display: block;
+        flex-direction: column;
+        //transition: 2s;
+    }
 
     &::after{
         content: "";
@@ -49,6 +56,15 @@
     }
 }
 
+.navigation-logo {
+    @media (max-width: 320px) {
+        // z-index: 1001;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+    }
+}
+
 .navigation-logo__left-part {
     @include h4;
     color: $_gray_logo;
@@ -58,6 +74,58 @@
     @include h4;
     font-weight: 400;
     color: $_white;
+}
+
+.navigation-active {
+
+    ul {
+        transform: translate(0);
+        position: relative;
+        transition: 0.5s;
+    }
+    
+    .navigation-burger {
+        .fa-bars {
+            display: none;
+        }
+        .fa-xmark {
+            @media (max-width: 320px) {
+                display: block;
+                color: $_white;
+                height: 19px;
+                width: 19px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.fa-bars {
+    display: none;
+
+    @media (max-width: 320px) {
+        display: block;
+        color: $_white;
+        height: 18px;
+        width: 24px;
+        cursor: pointer;
+    }
+}
+
+.fa-xmark {
+    display: none;
+}
+
+
+//2.07 2.17.30
+
+.navigation-back {
+    @media (max-width: 320px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 }
 
 .navigation-list {
@@ -74,7 +142,14 @@
         width: 566px;
     }
     @media (max-width: 320px) {
-        width: 320px;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100vh;
+
+        width: calc(100% + 30px);
+        //transform: translate(0, -150%);
+        transform: translate(-110%, 0);
+        position: absolute;
     }
 }
 
@@ -83,6 +158,10 @@
     position: relative;
     padding: 1.25rem 0;
 
+    @media (max-width: 320px) {
+        padding: 1.25rem;
+    }
+    
     &:hover::before {
         content: "";
         display: block;
@@ -90,8 +169,11 @@
         height: 3px;
         background-color: $_gray;
         position: absolute;
-        //top: calc(100% - 3px);
         bottom: 0;
+
+        @media (max-width: 320px) {
+            width: calc(100% - 30px);
+        }
     }
 
     a {
@@ -100,8 +182,8 @@
     }
 }
 
-.navigation-list__item-active {
-
+.navigation-list__item:active {
+ 
     &::before {
         content: "";
         display: block;
@@ -110,6 +192,10 @@
         background-color: $_red_active;
         position: absolute;
         bottom: 0;
+
+        @media (max-width: 320px) {
+            width: calc(100% - 30px);
+        }
     }
 
     a {
@@ -175,6 +261,7 @@
 
     &:hover {
         background-color: $_red_hover;
+        animation-play-state: paused;
     }
 
     &:active {
@@ -183,5 +270,19 @@
 
     a {
         @include button_text;
+    }
+
+    animation-name: bannerFindButton;
+    animation-duration: .2s;
+    animation-direction: alternate;
+    animation-iteration-count: 30;
+}
+
+@keyframes bannerFindButton {
+    0% {
+        background-color: $_red_normal;
+    }
+    100% {
+        background-color: $_red_hover;
     }
 }

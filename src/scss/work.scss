@@ -1,10 +1,5 @@
 .work {
     padding: 20px 0;
-
-    .container {
-        //width: 100%;
-        padding: 0;
-    }
 }
 
 // .work-wrap {
@@ -16,16 +11,19 @@
 .work-wrap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(285px, auto));
-    grid-template-rows: repeat(auto-fit, minmax(340px, auto));
+    //grid-template-rows: repeat(auto-fit, minmax(340px, auto));
+    //grid-template-rows:repeat(auto-fill, minmax(340px, 1fr));
+    //grid-template-rows:repeat(auto-fit, 340px);
+    //grid-template-rows:repeat(3, 340px);
     @media (max-width: 1024px) {
         //height: 230px;
         grid-template-columns: repeat(auto-fit, minmax(256px, auto));
-        grid-template-rows: repeat(auto-fit, minmax(230px, auto));
+        //grid-template-rows: repeat(auto-fit, minmax(230px, auto));
     }
     @media (max-width: 320px) {
         //height: 144px;
         grid-template-columns: repeat(auto-fit, minmax(150px, auto));
-        grid-template-rows: repeat(auto-fit, minmax(144px, auto));
+        //grid-template-rows: repeat(auto-fit, minmax(144px, auto));
     }
 }
 
@@ -34,15 +32,15 @@
     // height: 340px;
     //разобраться с шириной контайнера!
     // width: 285px;
-    // height: 285px;
-    // @media (max-width: 1024px) {
-    //     width: 256px;
-    //     height: 230px;
-    // }
-    // @media (max-width: 320px) {
-    //     width: 150px;
-    //     height: 144px;
-    // }
+     height: 285px;
+    @media (max-width: 1024px) {
+        //width: 256px;
+        height: 230px;
+    }
+    @media (max-width: 320px) {
+        //width: 150px;
+        height: 144px;
+    }
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -52,6 +50,17 @@
         object-position: center;
         width: 100%;
         height: 100%;
+
+        &:hover {
+            animation-name: hoverWorkImg;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-delay: .1s;
+        }
+
+        
     }
 
     & .work-info {
@@ -97,6 +106,30 @@
                     @include h6_mobile;
                 }
             }
+        }
+
+        animation-name: hoverWork;
+        animation-duration: 1s;
+        animation-direction: alternate;
+        animation-iteration-count: 1;
+        // animation-delay: .5s;
+    }
+
+    @keyframes hoverWork {
+        0%{
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes hoverWorkImg {
+        0%{
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.2);
         }
     }
 

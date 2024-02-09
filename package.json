@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build --public-url ./"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.11.0",
     "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "swiper": "^11.0.6"
   }
 }

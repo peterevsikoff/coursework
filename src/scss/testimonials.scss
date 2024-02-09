@@ -78,3 +78,26 @@
 
     }
 }
+
+:root {
+    --swiper-pagination-color: #5C3249;
+    --swiper-pagination-bullet-inactive-color: #fff;
+    --swiper-navigation-color: #fff;
+    --swiper-pagination-bottom: 0px;
+    --swiper-navigation-top-offset: calc(50% - 26px);
+}
+
+.swiper-pagination-bullet {
+    border: 1px solid #5C3249;
+}
+
+@media (max-width: 320px) {
+    .swiper-button-next, .swiper-button-prev {
+    visibility: hidden;
+    //display: none;
+    }
+}
+
+.swiper-wrapper {
+    margin-bottom: 26px;
+}
